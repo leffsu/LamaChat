@@ -1,0 +1,9 @@
+include ':notification'
+include ':core'
+include ':encryption'
+include ':network'
+include ':database'
+include ':app'
+include ':translator'
+
+rootProject.name = "Android Template"
