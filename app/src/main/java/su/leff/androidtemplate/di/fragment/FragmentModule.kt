@@ -13,8 +13,8 @@ class FragmentModule(val context: Context) {
 //    @FragmentScope
 //    internal fun shared(): ISharedPreferencesAPI = SharedPreferencesImpl(application)
 
-    @Provides
-    @FragmentScope
-    internal fun database(): AppDatabase = AppDatabase.getInstance(context)
+//    @Provides
+//    @FragmentScope
+//    internal fun database(): AppDatabase = AppDatabase.getInstance(context)
 
 }
