@@ -1,4 +1,4 @@
-package su.leff.database.note
+package su.leff.database.entity.note
 
 class NoteRepository(private val dao: NoteDAO) {
 

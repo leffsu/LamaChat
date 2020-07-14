@@ -3,8 +3,8 @@ package su.leff.androidtemplate.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import su.leff.database.note.Note
-import su.leff.database.note.NoteRepository
+import su.leff.database.entity.note.Note
+import su.leff.database.entity.note.NoteRepository
 
 class NoteViewModel(
     private val noteRepository: NoteRepository

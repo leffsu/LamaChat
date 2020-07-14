@@ -6,6 +6,7 @@ import su.leff.androidtemplate.di.application.AppModule
 import su.leff.androidtemplate.di.application.DaggerAppComponent
 import su.leff.androidtemplate.viewmodel.NoteViewModel
 import su.leff.database.AppDatabase
+import su.leff.sharedpref.SharedPref
 import javax.inject.Inject
 
 class App : Application(){
@@ -16,7 +17,10 @@ class App : Application(){
     @Inject
     lateinit var database: AppDatabase
 
-    val component: AppComponent by lazy {
+    @Inject
+    lateinit var sharedPref: SharedPref
+
+    private val component: AppComponent by lazy {
         DaggerAppComponent
             .builder()
             .appModule(AppModule(this))

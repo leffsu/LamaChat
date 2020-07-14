@@ -1,3 +1,4 @@
+include ':sharedpref'
 include ':notification'
 include ':core'
 include ':encryption'

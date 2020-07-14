@@ -1,4 +1,4 @@
-package su.leff.database.note
+package su.leff.database.entity.note
 
 import androidx.room.*
 

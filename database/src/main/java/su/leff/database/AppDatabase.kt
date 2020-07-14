@@ -7,8 +7,8 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import su.leff.database.Constants.DATABASE_NAME
-import su.leff.database.note.Note
-import su.leff.database.note.NoteDAO
+import su.leff.database.entity.note.Note
+import su.leff.database.entity.note.NoteDAO
 import java.util.concurrent.Executors
 
 @Database(

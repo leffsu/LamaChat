@@ -1,4 +1,4 @@
-package su.leff.androidtemplate.ui.info
+package su.leff.androidtemplate.ui.chat
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import su.leff.androidtemplate.R
 import su.leff.androidtemplate.navigation.BaseFragment
 import su.leff.androidtemplate.util.onClick
 
-class InfoFragment : BaseFragment() {
+class ChatFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

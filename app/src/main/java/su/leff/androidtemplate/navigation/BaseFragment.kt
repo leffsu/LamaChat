@@ -9,18 +9,22 @@ import su.leff.androidtemplate.di.fragment.FragmentModule
 import su.leff.androidtemplate.util.requireArguments
 import su.leff.androidtemplate.viewmodel.NoteViewModel
 import su.leff.database.AppDatabase
+import su.leff.sharedpref.SharedPref
 import javax.inject.Inject
 
 open class BaseFragment : Fragment() {
 
 
-    lateinit var database: AppDatabase
-    lateinit var noteViewModel: NoteViewModel
+    protected lateinit var database: AppDatabase
+    protected lateinit var noteViewModel: NoteViewModel
+    protected lateinit var sharedPref: SharedPref
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        database = (requireActivity().application as App).database
-        noteViewModel = (requireActivity().application as App).noteViewModel
+        val app = (requireActivity().application as App)
+        database = app.database
+        noteViewModel = app.noteViewModel
+        sharedPref = app.sharedPref
     }
 
     fun <T : BaseKey> getKey(): T = requireArguments.getParcelable<T>("KEY")!!

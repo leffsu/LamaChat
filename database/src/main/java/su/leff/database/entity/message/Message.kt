@@ -1,4 +1,4 @@
-package su.leff.database.note
+package su.leff.database.entity.message
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -6,10 +6,9 @@ import androidx.room.TypeConverters
 import su.leff.database.CalendarConverter
 import java.util.*
 
-@Entity(tableName = "note")
-data class Note(
-    @PrimaryKey val noteGUID: String,
+@Entity(tableName = "message")
+data class Message(
+    @PrimaryKey val messageGUID: String,
     val text: String,
-    @TypeConverters(CalendarConverter::class)
-    val date: Calendar
+    val userGUID: String
 )

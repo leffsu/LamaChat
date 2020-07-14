@@ -1,4 +1,4 @@
-package su.leff.androidtemplate.ui.about
+package su.leff.androidtemplate.ui.userinfo
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import su.leff.androidtemplate.R
 import su.leff.androidtemplate.navigation.BaseFragment
 import su.leff.androidtemplate.util.onClick
 
-class AboutFragment : BaseFragment() {
+class UserInfoFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
