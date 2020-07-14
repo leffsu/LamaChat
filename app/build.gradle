@@ -13,7 +13,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -68,5 +68,8 @@ dependencies {
 
     implementation project(':database')
     implementation project(':sharedpref')
+    implementation 'com.facebook.fresco:fresco:2.2.0'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
 
 }

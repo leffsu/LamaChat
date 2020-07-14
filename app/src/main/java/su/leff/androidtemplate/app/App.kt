@@ -1,6 +1,7 @@
 package su.leff.androidtemplate.app
 
 import android.app.Application
+import com.facebook.drawee.backends.pipeline.Fresco
 import su.leff.androidtemplate.di.application.AppComponent
 import su.leff.androidtemplate.di.application.AppModule
 import su.leff.androidtemplate.di.application.DaggerAppComponent
@@ -29,6 +30,7 @@ class App : Application(){
 
     override fun onCreate() {
         super.onCreate()
+        Fresco.initialize(this);
         component.inject(this)
     }
 }
