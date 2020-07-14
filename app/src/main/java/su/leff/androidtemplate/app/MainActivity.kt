@@ -9,6 +9,7 @@ import com.zhuinden.simplestack.navigator.Navigator
 import kotlinx.android.synthetic.main.activity_main.*
 import su.leff.androidtemplate.R
 import su.leff.androidtemplate.navigation.FragmentStateChanger
+import su.leff.androidtemplate.ui.auth.AuthKey
 import su.leff.androidtemplate.ui.home.HomeKey
 import su.leff.androidtemplate.util.backstack
 
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity(), SimpleStateChanger.NavigationHandler {
 
         Navigator.configure()
             .setStateChanger(SimpleStateChanger(this))
-            .install(this, root, History.single(HomeKey()))
+            .install(this, root, History.single(AuthKey()))
     }
 
     override fun onBackPressed() {
