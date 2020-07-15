@@ -4,12 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zhuinden.simplestackextensions.fragmentsktx.backstack
 import kotlinx.android.synthetic.main.fragment_chat.*
 import su.leff.androidtemplate.R
 import su.leff.androidtemplate.navigation.BaseFragment
 import su.leff.androidtemplate.ui.chatinfo.ChatInfoKey
+import su.leff.androidtemplate.util.hide
+import su.leff.androidtemplate.util.onClick
+import su.leff.androidtemplate.util.show
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -62,5 +66,17 @@ class ChatFragment : BaseFragment() {
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         rvChatss.adapter = adapter
         adapter.setList(list)
+        edtMessage.doOnTextChanged { text, start, before, count ->
+            if(count>0){
+                imgSend.show()
+            }else{
+                imgSend.hide()
+            }
+        }
+        imgSend.onClick {
+            edtMessage.setText("")
+            edtMessage.clearFocus()
+        }
+
     }
 }
