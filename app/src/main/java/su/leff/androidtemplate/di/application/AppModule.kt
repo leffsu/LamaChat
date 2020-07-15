@@ -4,8 +4,10 @@ import android.content.Context
 import dagger.Module
 import dagger.Provides
 import su.leff.androidtemplate.di.fragment.FragmentScope
+import su.leff.androidtemplate.util.language.LanguageIniFileReader
 import su.leff.androidtemplate.viewmodel.ChatViewModel
 import su.leff.androidtemplate.viewmodel.NoteViewModel
+import su.leff.androidtemplate.viewmodel.TranslationViewModel
 import su.leff.database.AppDatabase
 import su.leff.database.entity.dialog.DialogRepository
 import su.leff.database.entity.dialogmembership.DialogMembershipRepository
@@ -19,7 +21,7 @@ import su.leff.sharedpref.SharedPrefImpl
 class AppModule(private val context: Context) {
 
     @Provides
-    @FragmentScope
+    @AppScope
     internal fun database(): AppDatabase = AppDatabase.getInstance(context)
 
     @Provides
@@ -39,5 +41,9 @@ class AppModule(private val context: Context) {
     @Provides
     @AppScope
     internal fun sharedPref(): SharedPref = SharedPrefImpl(context)
+
+    @Provides
+    @AppScope
+    internal fun translationViewModel(): TranslationViewModel = TranslationViewModel(context)
 
 }

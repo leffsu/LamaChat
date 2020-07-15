@@ -1,7 +1,13 @@
 login=Login
+username=Username
 signup=Sign up
 email=Email
 password=Password
 no_account=No account?
 have_an_account=Have an account?
 welcome=Welcome to LamaChat
+cancel=Cancel
+apply=Apply
+english=English
+russian=Russian
+language=Language

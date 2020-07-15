@@ -6,13 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zhuinden.simplestackextensions.fragmentsktx.backstack
-import kotlinx.android.synthetic.main.fragment_first.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import su.leff.androidtemplate.R
 import su.leff.androidtemplate.navigation.BaseFragment
-import su.leff.androidtemplate.ui.auth.AuthKey
 import su.leff.androidtemplate.ui.chat.ChatKey
-import su.leff.androidtemplate.util.onClick
 import java.util.*
 import kotlin.collections.ArrayList
 

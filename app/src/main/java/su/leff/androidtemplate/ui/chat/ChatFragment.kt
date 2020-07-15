@@ -7,19 +7,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zhuinden.simplestackextensions.fragmentsktx.backstack
 import kotlinx.android.synthetic.main.fragment_chat.*
-import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.fragment_second.*
 import su.leff.androidtemplate.R
 import su.leff.androidtemplate.navigation.BaseFragment
 import su.leff.androidtemplate.ui.chatinfo.ChatInfoKey
-import su.leff.androidtemplate.ui.home.Dialog
-import su.leff.androidtemplate.ui.home.HomeAdapter
-import su.leff.androidtemplate.util.onClick
 import java.util.*
 import kotlin.collections.ArrayList
 
 class ChatFragment : BaseFragment() {
-    val adapter = ChatAdapter()
+
+    private val adapter = ChatAdapter()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -60,7 +57,6 @@ class ChatFragment : BaseFragment() {
         imgChatInfo.setOnClickListener {
             backstack.goTo(ChatInfoKey())
         }
-
 
         rvChatss.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
