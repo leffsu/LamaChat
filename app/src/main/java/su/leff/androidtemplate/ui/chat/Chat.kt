@@ -1,4 +1,6 @@
 package su.leff.androidtemplate.ui.chat
 
-class Chat(val title:String, val mess:String) {
+import java.util.*
+
+class Chat(val title:String, val mess:String, val calendar: Calendar) {
 }
