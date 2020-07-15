@@ -4,14 +4,13 @@ import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.TranslateAnimation
 import android.widget.TextView
-import com.zhuinden.simplestackextensions.fragmentsktx.backstack
+import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_auth.*
-import kotlinx.android.synthetic.main.fragment_second.*
 import su.leff.androidtemplate.BuildConfig
 import su.leff.androidtemplate.R
 import su.leff.androidtemplate.navigation.BaseFragment
@@ -58,11 +57,15 @@ class AuthFragment : BaseFragment() {
                 AuthState.SIGN_IN -> {
                     currentState = AuthState.SIGN_UP
                     edtLogin.show()
+                    btnLogin.text = "Sign up"
+                    btnContactUs.text = "Have an account?"
                 }
 
                 AuthState.SIGN_UP -> {
                     currentState = AuthState.SIGN_IN
                     edtLogin.hide()
+                    btnLogin.text = "Login"
+                    btnContactUs.text = "No account?"
                 }
             }
         }
