@@ -22,6 +22,10 @@ class MainActivity : AppCompatActivity(), SimpleStateChanger.NavigationHandler {
 
         fragmentStateChanger = FragmentStateChanger(supportFragmentManager, R.id.root)
 
+        val loggedIn = false
+
+        val baseKey = if (loggedIn) HomeKey() else AuthKey()
+
         Navigator.configure()
             .setStateChanger(SimpleStateChanger(this))
             .install(this, root, History.single(AuthKey()))
