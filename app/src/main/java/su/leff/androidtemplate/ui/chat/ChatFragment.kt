@@ -28,6 +28,10 @@ class ChatFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        imgBack.setOnClickListener {
+            backstack.goBack()
+        }
+
         val list = ArrayList<Chat>()
         for (i in 1..20) {
             list.add(Chat(title = "Oleg", mess = "Где макет?"))
