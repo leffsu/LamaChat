@@ -7,8 +7,12 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import su.leff.database.Constants.DATABASE_NAME
+import su.leff.database.entity.dialog.DialogDAO
+import su.leff.database.entity.dialogmembership.DialogMembershipDAO
+import su.leff.database.entity.message.MessageDAO
 import su.leff.database.entity.note.Note
 import su.leff.database.entity.note.NoteDAO
+import su.leff.database.entity.user.UserDAO
 import java.util.concurrent.Executors
 
 @Database(
@@ -20,6 +24,14 @@ import java.util.concurrent.Executors
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun noteDAO(): NoteDAO
+
+    abstract fun messageDAO(): MessageDAO
+
+    abstract fun dialogDAO(): DialogDAO
+
+    abstract fun dialogMembershaipDAO(): DialogMembershipDAO
+
+    abstract fun userDAO(): UserDAO
 
     companion object {
 
