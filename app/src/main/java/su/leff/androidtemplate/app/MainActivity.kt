@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity(), SimpleStateChanger.NavigationHandler {
 
         Navigator.configure()
             .setStateChanger(SimpleStateChanger(this))
-            .install(this, root, History.single(AuthKey()))
+            .install(this, root, History.single(baseKey))
     }
 
     override fun onBackPressed() {
