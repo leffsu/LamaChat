@@ -8,14 +8,28 @@
     android:focusable="false"
     android:focusableInTouchMode="true">
 
-
-    <Button
+    <FrameLayout
         android:id="@+id/btnLanguage"
-        android:text="lang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_black_button_rounded_corners_white_stroke_auth_language"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txvLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="4dp"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+    </FrameLayout>
 
     <TextView
         android:id="@+id/txvVersion"
@@ -63,6 +77,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:backgroundTint="@color/white"
+        android:imeOptions="actionNext"
         android:paddingBottom="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -78,6 +93,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:backgroundTint="@color/white"
+        android:imeOptions="actionNext"
         android:paddingBottom="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -93,6 +109,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:backgroundTint="@color/white"
+        android:imeOptions="actionNext"
         android:paddingBottom="20dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"

@@ -54,17 +54,20 @@ class AuthFragment : BaseFragment() {
         Spannable, а у него в разных языках разные значения начала и конца для подсветки текста.
          */
         translationViewModel.language.observe(viewLifecycleOwner, Observer { state ->
+
+            txvLanguage.text = state.name
+
             val welcomeMessage = Translator.getString("welcome")
             val spannable = SpannableString(welcomeMessage)
 
             var start = 0
             var end = 0
             when (state) {
-                LanguageState.ENGLISH -> {
+                LanguageState.EN -> {
                     start = 11
                     end = 19
                 }
-                LanguageState.RUSSIAN -> {
+                LanguageState.RU -> {
                     start = 19
                     end = 27
                 }
@@ -120,7 +123,7 @@ class AuthFragment : BaseFragment() {
      */
     private fun showBottomDialog() {
         val fragment = LanguageChangeDialog.newInstance(
-            translationViewModel.language.value ?: LanguageState.ENGLISH,
+            translationViewModel.language.value ?: LanguageState.EN,
             this::setNewLanguageState
         )
         fragment.show(childFragmentManager, "")

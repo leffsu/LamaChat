@@ -6,7 +6,6 @@ import su.leff.androidtemplate.R
 import su.leff.androidtemplate.di.application.AppComponent
 import su.leff.androidtemplate.di.application.AppModule
 import su.leff.androidtemplate.di.application.DaggerAppComponent
-import su.leff.androidtemplate.util.language.LanguageIniFileReader
 import su.leff.androidtemplate.util.language.LanguageState
 import su.leff.androidtemplate.viewmodel.NoteViewModel
 import su.leff.androidtemplate.viewmodel.TranslationViewModel
@@ -42,10 +41,10 @@ class App : Application() {
 
         when (resources.getString(R.string.language_id).toInt()) {
             0 -> {
-                translationViewModel.postLanguage(LanguageState.ENGLISH)
+                translationViewModel.postLanguage(LanguageState.EN)
             }
             1 -> {
-                translationViewModel.postLanguage(LanguageState.RUSSIAN)
+                translationViewModel.postLanguage(LanguageState.RU)
             }
         }
     }

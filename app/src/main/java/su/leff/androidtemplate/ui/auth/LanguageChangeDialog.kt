@@ -38,11 +38,11 @@ class LanguageChangeDialog(
      */
     private fun setState(languageState: LanguageState) {
         when (languageState) {
-            LanguageState.RUSSIAN -> {
+            LanguageState.RU -> {
                 elementRussian.imgCheck.animate().alpha(1.0f).duration = 100
                 elementEnglish.imgCheck.animate().alpha(0f).duration = 100
             }
-            LanguageState.ENGLISH -> {
+            LanguageState.EN -> {
                 elementRussian.imgCheck.animate().alpha(0f).duration = 100
                 elementEnglish.imgCheck.animate().alpha(1.0f).duration = 100
             }
@@ -67,13 +67,13 @@ class LanguageChangeDialog(
 
         // Нажали на кнопку русского языка.
         elementRussian.onClick {
-            languageState = LanguageState.RUSSIAN
+            languageState = LanguageState.RU
             setState(languageState)
         }
 
         // Нажали на кнопку английского языка.
         elementEnglish.onClick {
-            languageState = LanguageState.ENGLISH
+            languageState = LanguageState.EN
             setState(languageState)
         }
 

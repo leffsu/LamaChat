@@ -13,10 +13,10 @@ class LanguageIniFileReader(private val context: Context) {
 
     fun readLanguage(languageState: LanguageState) {
         val hashMap: HashMap<String, String> = when (languageState) {
-            LanguageState.RUSSIAN -> {
+            LanguageState.RU -> {
                 readIniFile(R.raw.ru_text)
             }
-            LanguageState.ENGLISH -> {
+            LanguageState.EN -> {
                 readIniFile(R.raw.en_text)
             }
         }
