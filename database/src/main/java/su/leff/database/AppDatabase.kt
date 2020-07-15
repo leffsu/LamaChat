@@ -7,16 +7,26 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import su.leff.database.Constants.DATABASE_NAME
+import su.leff.database.entity.dialog.Dialog
 import su.leff.database.entity.dialog.DialogDAO
+import su.leff.database.entity.dialogmembership.DialogMembership
 import su.leff.database.entity.dialogmembership.DialogMembershipDAO
+import su.leff.database.entity.message.Message
 import su.leff.database.entity.message.MessageDAO
 import su.leff.database.entity.note.Note
 import su.leff.database.entity.note.NoteDAO
+import su.leff.database.entity.user.User
 import su.leff.database.entity.user.UserDAO
 import java.util.concurrent.Executors
 
 @Database(
-    entities = [Note::class],
+    entities = [
+        Note::class,
+        Dialog::class,
+        DialogMembership::class,
+        Message::class,
+        User::class
+    ],
     version = 1,
     exportSchema = false
 )

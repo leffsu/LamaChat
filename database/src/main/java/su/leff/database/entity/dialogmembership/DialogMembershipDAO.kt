@@ -8,11 +8,11 @@ interface DialogMembershipDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertDialog(dialogMembership: DialogMembership)
 
-    @Query("SELECT * FROM user")
+    @Query("SELECT * FROM dialogmembership")
     suspend fun fetchAllDialogs(): List<DialogMembership>
 
-    @Query("SELECT * FROM user WHERE userGUID =:userGUID")
-    suspend fun getDialog(userGUID: String): DialogMembership
+    @Query("SELECT * FROM dialogmembership WHERE userGUID =:dialogMembershipGUID")
+    suspend fun getDialog(dialogMembershipGUID: String): DialogMembership
 
     @Transaction
     @Update

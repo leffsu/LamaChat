@@ -8,11 +8,11 @@ interface DialogDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertDialog(dialog: Dialog)
 
-    @Query("SELECT * FROM user")
+    @Query("SELECT * FROM dialog")
     suspend fun fetchAllDialogs(): List<Dialog>
 
-    @Query("SELECT * FROM user WHERE userGUID =:userGUID")
-    suspend fun getDialog(userGUID: String): Dialog
+    @Query("SELECT * FROM dialog WHERE dialogGUID =:dialogGUID")
+    suspend fun getDialog(dialogGUID: String): Dialog
 
     @Transaction
     @Update
