@@ -1,6 +1,7 @@
 package su.leff.androidtemplate.ui.auth
 
 import android.os.Bundle
+import android.os.Handler
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
@@ -109,7 +110,14 @@ class AuthFragment : BaseFragment() {
             }
         }
 
-        showProgress()
+        btnLogin.onClick {
+            showProgress()
+
+            Handler().postDelayed({
+                hideProgress()
+            }, 5000)
+        }
+
     }
 
     /**

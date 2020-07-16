@@ -6,8 +6,7 @@
     android:animateLayoutChanges="true"
     android:background="@color/background"
     android:focusable="false"
-    android:focusableInTouchMode="true"
-    android:id="@+id/parent">
+    android:focusableInTouchMode="true">
 
     <FrameLayout
         android:id="@+id/btnLanguage"
