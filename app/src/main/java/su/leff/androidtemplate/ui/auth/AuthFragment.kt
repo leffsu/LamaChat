@@ -108,6 +108,8 @@ class AuthFragment : BaseFragment() {
                 }
             }
         }
+
+        showProgress()
     }
 
     /**

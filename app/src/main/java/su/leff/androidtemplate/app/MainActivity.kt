@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity(), SimpleStateChanger.NavigationHandler {
 
         fragmentStateChanger = FragmentStateChanger(supportFragmentManager, R.id.root)
 
-        val loggedIn = true
+        val loggedIn = false
 
         val baseKey = if (loggedIn) HomeKey() else AuthKey()
 

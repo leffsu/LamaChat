@@ -5,6 +5,7 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="black">#000000</color>
     <color name="background">#121212</color>
+    <color name="background_accent">#383838</color>
     <color name="white">#FFFFFF</color>
     <color name="white_half_transparent">#4DFFFFFF</color>
     <color name="accent">#ffe0b2</color>
