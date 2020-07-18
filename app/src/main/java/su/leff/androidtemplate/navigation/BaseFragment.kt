@@ -49,28 +49,32 @@ open class BaseFragment : Fragment() {
      */
     private fun initSpinner(parentView: View) {
 
+
         // Определяем, верна ли верстка.
         if (parentView is ParentConstraintLayout) {
+
+
+            // Генерируем id потому что Constraint требует.
+            fun generateViewIds() {
+                parentView.ensureViewId()
+                for (child in parentView.children) {
+                    child.ensureViewId()
+                }
+            }
+
             parent = parentView
             val spinner = layoutInflater.inflate(R.layout.element_progressbar, null)
-            // Генерируем id потому что Constraint требует.
-            spinner.id = View.generateViewId()
             val layoutParams = ConstraintLayout.LayoutParams(
                 ConstraintLayout.LayoutParams.WRAP_CONTENT,
                 ConstraintLayout.LayoutParams.WRAP_CONTENT
             )
-            if (parentView.id == -1) {
-                parentView.id = View.generateViewId()
-            }
-            for (child in parentView.children) {
-                if (child.id == -1) {
-                    child.id = View.generateViewId()
-                }
-            }
+
             // Добавляем наш прогрессбар в дерево.
             parentView.addView(
                 spinner, layoutParams
             )
+
+            generateViewIds()
 
             // Определяем позицию прогрессбара.
             val constraintSet = ConstraintSet()
@@ -103,4 +107,10 @@ open class BaseFragment : Fragment() {
     }
 
     fun <T : BaseKey> getKey(): T = requireArguments.getParcelable<T>("KEY")!!
+
+    private fun View.ensureViewId() = run {
+        if (this.id == -1) {
+            this.id = View.generateViewId()
+        }
+    }
 }
