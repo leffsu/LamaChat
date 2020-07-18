@@ -2,7 +2,6 @@
 .gradle
 /local.properties
 /.idea
-gradle.properties
 gradlew
 gradlew.bat
 .DS_Store

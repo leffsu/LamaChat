@@ -8,6 +8,7 @@ import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import kotlinx.android.synthetic.main.fragment_auth.*
@@ -110,7 +111,7 @@ class AuthFragment : BaseFragment() {
             }
         }
 
-        btnLogin.onClick {
+        fun login() {
             showProgress()
 
             Handler().postDelayed({
@@ -118,6 +119,16 @@ class AuthFragment : BaseFragment() {
             }, 5000)
         }
 
+        btnLogin.onClick {
+            login()
+        }
+
+        edtPassword.setOnEditorActionListener { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                login()
+            }
+            false
+        }
     }
 
     /**

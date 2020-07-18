@@ -11,7 +11,7 @@ import kotlin.collections.HashMap
 
 class LanguageIniFileReader(private val context: Context) {
 
-    fun readLanguage(languageState: LanguageState) {
+    fun readLanguage(languageState: LanguageState): HashMap<String, String> {
         val hashMap: HashMap<String, String> = when (languageState) {
             LanguageState.RU -> {
                 readIniFile(R.raw.ru_text)
@@ -21,6 +21,7 @@ class LanguageIniFileReader(private val context: Context) {
             }
         }
         Translator.loadMap(hashMap)
+        return hashMap
     }
 
     private fun readIniFile(resource: Int): HashMap<String, String> {
