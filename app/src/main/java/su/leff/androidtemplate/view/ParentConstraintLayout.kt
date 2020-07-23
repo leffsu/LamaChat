@@ -1,4 +1,4 @@
-package su.leff.androidtemplate.navigation
+package su.leff.androidtemplate.view
 
 import android.content.Context
 import android.graphics.Canvas

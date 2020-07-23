@@ -6,5 +6,6 @@ include ':network'
 include ':database'
 include ':app'
 include ':translator'
+include ':smoothbottombar'
 
 rootProject.name = "Android Template"

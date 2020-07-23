@@ -5,12 +5,14 @@ import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.view.children
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import su.leff.androidtemplate.R
 import su.leff.androidtemplate.app.App
 import su.leff.androidtemplate.util.hide
 import su.leff.androidtemplate.util.requireArguments
 import su.leff.androidtemplate.util.show
+import su.leff.androidtemplate.view.ParentConstraintLayout
 import su.leff.androidtemplate.viewmodel.NoteViewModel
 import su.leff.androidtemplate.viewmodel.TranslationViewModel
 import su.leff.database.AppDatabase
@@ -49,20 +51,20 @@ open class BaseFragment : Fragment() {
      */
     private fun initSpinner(parentView: View) {
 
+        fun throwException() {
+            throw RuntimeException("Parent is not ParentConstraintLayout")
+        }
 
-        // Определяем, верна ли верстка.
-        if (parentView is ParentConstraintLayout) {
-
-
+        fun initParentConstraint(constraint: ParentConstraintLayout) {
             // Генерируем id потому что Constraint требует.
             fun generateViewIds() {
                 parentView.ensureViewId()
-                for (child in parentView.children) {
+                for (child in constraint.children) {
                     child.ensureViewId()
                 }
             }
 
-            parent = parentView
+            parent = constraint
             val spinner = layoutInflater.inflate(R.layout.element_progressbar, null)
             val layoutParams = ConstraintLayout.LayoutParams(
                 ConstraintLayout.LayoutParams.WRAP_CONTENT,
@@ -70,7 +72,7 @@ open class BaseFragment : Fragment() {
             )
 
             // Добавляем наш прогрессбар в дерево.
-            parentView.addView(
+            constraint.addView(
                 spinner, layoutParams
             )
 
@@ -79,14 +81,20 @@ open class BaseFragment : Fragment() {
             // Определяем позицию прогрессбара.
             val constraintSet = ConstraintSet()
 
-            constraintSet.clone(parentView)
+            constraintSet.clone(constraint)
             constraintSet.centerHorizontally(spinner.id, ConstraintSet.PARENT_ID)
             constraintSet.centerVertically(spinner.id, ConstraintSet.PARENT_ID)
-            constraintSet.applyTo(parentView)
+            constraintSet.applyTo(constraint)
 
             cvSpinner = spinner as ConstraintLayout
+        }
+
+
+        // Определяем, верна ли верстка.
+        if (parentView is ParentConstraintLayout) {
+            initParentConstraint(parentView)
         } else {
-            throw RuntimeException("Parent is not ParentConstraintLayout")
+            throwException()
         }
     }
 
