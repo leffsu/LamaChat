@@ -15,6 +15,8 @@ import kotlinx.android.synthetic.main.fragment_auth.*
 import su.leff.androidtemplate.BuildConfig
 import su.leff.androidtemplate.R
 import su.leff.androidtemplate.navigation.BaseFragment
+import su.leff.androidtemplate.ui.home.HomeKey
+import su.leff.androidtemplate.util.backstack
 import su.leff.androidtemplate.util.hide
 import su.leff.androidtemplate.util.language.LanguageState
 import su.leff.androidtemplate.util.onClick
@@ -99,6 +101,7 @@ class AuthFragment : BaseFragment() {
                     edtLogin.show()
                     btnLogin.key = "signup"
                     btnChangeAuthState.key = "have_an_account"
+
                 }
 
                 AuthState.SIGN_UP -> {
@@ -116,6 +119,7 @@ class AuthFragment : BaseFragment() {
 
             Handler().postDelayed({
                 hideProgress()
+                backstack.goTo(HomeKey())
             }, 5000)
         }
 

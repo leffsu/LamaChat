@@ -8,6 +8,7 @@ class NetworkImpl : Network {
 
     override fun signUp(username: String, email: String, password: String) {
         TODO("Not yet implemented")
+
     }
 
 }
