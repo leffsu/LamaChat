@@ -53,10 +53,15 @@ class AuthFragment : BaseFragment() {
         edtPassword.hintKey = "password"
         edtLogin.hintKey = "username"
 
+        setupTitleSpan()
+        setupListeners()
+    }
+
+    private fun setupTitleSpan(){
         /*
         Здесь подписываемся на смену языка в translationViewModel потому что мы ставим
         Spannable, а у него в разных языках разные значения начала и конца для подсветки текста.
-         */
+        */
         translationViewModel.language.observe(viewLifecycleOwner, Observer { state ->
 
             txvLanguage.text = state.name
@@ -85,12 +90,9 @@ class AuthFragment : BaseFragment() {
             )
             txvWelcomeMessage.setText(spannable, TextView.BufferType.SPANNABLE)
         })
+    }
 
-
-        // При нажатии на кнопку выбора языков, показать диалог с языками.
-        btnLanguage.onClick {
-            showBottomDialog()
-        }
+    private fun setupListeners(){
 
         // При нажатии на кнопку "Нет аккаунта?" или "Есть аккаунт?" меняем состояние экрана.
         btnChangeAuthState.onClick {
@@ -101,9 +103,7 @@ class AuthFragment : BaseFragment() {
                     edtLogin.show()
                     btnLogin.key = "signup"
                     btnChangeAuthState.key = "have_an_account"
-
                 }
-
                 AuthState.SIGN_UP -> {
                     // Если были на регистрации, то прячем поле логина.
                     currentState = AuthState.SIGN_IN
@@ -114,13 +114,9 @@ class AuthFragment : BaseFragment() {
             }
         }
 
-        fun login() {
-            showProgress()
-
-            Handler().postDelayed({
-                hideProgress()
-                backstack.goTo(HomeKey())
-            }, 5000)
+        // При нажатии на кнопку выбора языков, показать диалог с языками.
+        btnLanguage.onClick {
+            showBottomDialog()
         }
 
         btnLogin.onClick {
@@ -133,6 +129,15 @@ class AuthFragment : BaseFragment() {
             }
             false
         }
+    }
+
+    private fun login() {
+        showProgress()
+
+        Handler().postDelayed({
+            hideProgress()
+            backstack.goTo(HomeKey())
+        }, 5000)
     }
 
     /**

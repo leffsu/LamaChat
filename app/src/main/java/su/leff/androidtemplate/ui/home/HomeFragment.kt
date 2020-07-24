@@ -53,8 +53,6 @@ class HomeFragment : BaseFragment() {
         transaction.commit()
 
 
-
-
         translationViewModel.language.observe(viewLifecycleOwner, Observer {
             bottomBar.items[0].title = Translator.getString("chats")
             bottomBar.items[1].title = Translator.getString("chat_rooms")
