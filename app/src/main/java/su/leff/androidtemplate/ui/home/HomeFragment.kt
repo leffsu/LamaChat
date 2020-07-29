@@ -23,6 +23,7 @@ import su.leff.androidtemplate.navigation.FragmentStateChanger
 import su.leff.androidtemplate.ui.chat.ChatKey
 import su.leff.androidtemplate.ui.home.chatlist.ChatListFragment
 import su.leff.androidtemplate.ui.home.chatlist.ChatListKey
+import su.leff.androidtemplate.ui.home.news.NewsFragment
 import su.leff.androidtemplate.util.language.LanguageState
 import su.leff.translator.Translator
 import java.util.*
@@ -47,12 +48,13 @@ class HomeFragment : BaseFragment() {
 
 
         fragmentStateChanger = parentFragmentManager
-        val transaction = fragmentStateChanger.beginTransaction()
-        transaction.replace(R.id.root, ChatListFragment())
-        transaction.addToBackStack(null)
-        transaction.commit()
+        val fragmentChats = ChatListFragment()
+        val fragmentNews = NewsFragment()
 
-
+//        fragmentStateChanger.beginTransaction().add(R.id.root, fragmentChats).hide(fragmentChats)
+//            .commit()
+//        fragmentStateChanger.beginTransaction().add(R.id.root, fragmentNews).commit()
+//
         translationViewModel.language.observe(viewLifecycleOwner, Observer {
             bottomBar.items[0].title = Translator.getString("chats")
             bottomBar.items[1].title = Translator.getString("chat_rooms")
@@ -62,7 +64,16 @@ class HomeFragment : BaseFragment() {
 
         bottomBar.onItemSelectedListener = object : OnItemSelectedListener {
             override fun onItemSelect(pos: Int): Boolean {
-                println(pos)
+                when (pos) {
+                    0 -> {
+                        fragmentStateChanger.beginTransaction().add(R.id.root, fragmentChats)
+                            .commit()
+                    }
+                    1 -> {
+                        fragmentStateChanger.beginTransaction().add(R.id.root, fragmentNews)
+                            .commit()
+                    }
+                }
                 return true
             }
         }

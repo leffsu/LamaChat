@@ -52,7 +52,7 @@ open class BaseFragment : Fragment() {
     private fun initSpinner(parentView: View) {
 
         fun throwException() {
-            throw RuntimeException("Parent is not ParentConstraintLayout")
+//            throw RuntimeException("Parent is not ParentConstraintLayout")
         }
 
         fun initParentConstraint(constraint: ParentConstraintLayout) {

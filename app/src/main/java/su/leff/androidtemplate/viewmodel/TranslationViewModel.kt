@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import su.leff.androidtemplate.util.language.LanguageIniFileReader
 import su.leff.androidtemplate.util.language.LanguageState
-import su.leff.database.entity.note.Note
 
 class TranslationViewModel(private val context: Context) : ViewModel() {
 
