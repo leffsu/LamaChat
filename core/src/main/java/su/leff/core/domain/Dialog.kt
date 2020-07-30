@@ -1,4 +1,4 @@
-package su.leff.core.data
+package su.leff.core.domain
 
 class Dialog(
     val dialogGUID: String,

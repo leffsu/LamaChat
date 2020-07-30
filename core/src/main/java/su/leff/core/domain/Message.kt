@@ -1,3 +1,3 @@
-package su.leff.core.data
+package su.leff.core.domain
 
 data class Message(val id: Long)

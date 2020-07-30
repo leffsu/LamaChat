@@ -1,5 +1,7 @@
 package su.leff.core.data
 
+import su.leff.core.domain.Dialog
+
 class DialogRepository(private val dialogDataSource: DialogDataSource,
                        private val openDialogDataSource: OpenDialogDataSource) {
 

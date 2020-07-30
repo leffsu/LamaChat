@@ -1,6 +1,10 @@
 package su.leff.presentation.util
 
 import android.view.View
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.withContext
 
 fun View.show() {
     this.visibility = View.VISIBLE
@@ -28,4 +32,10 @@ fun <T : View> T.hideIf(condition: (T) -> Boolean): T {
     }
 
     return this
+}
+
+suspend fun <T> ViewModel.waitFor(block: suspend CoroutineScope.() -> T) {
+    withContext(viewModelScope.coroutineContext) {
+        block.invoke(viewModelScope)
+    }
 }

@@ -1,7 +1,7 @@
 package su.leff.database.framework
 
 import android.content.Context
-import su.leff.core.data.Dialog
+import su.leff.core.domain.Dialog
 import su.leff.core.data.DialogDataSource
 import su.leff.database.AppDatabase
 import su.leff.database.entity.dialog.DialogEntity
@@ -21,7 +21,13 @@ class RoomDialogDataSource(context: Context) : DialogDataSource {
     }
 
     override suspend fun readAll(): List<Dialog> =
-        dialogDAO.fetchAllDialogs().map { Dialog(it.dialogGUID, it.name, it.isGroup) }
+        dialogDAO.fetchAllDialogs().map {
+            Dialog(
+                it.dialogGUID,
+                it.name,
+                it.isGroup
+            )
+        }
 
     override suspend fun remove(dialog: Dialog) {
         dialogDAO.deleteDialog(

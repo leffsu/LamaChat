@@ -3,13 +3,13 @@ package su.leff.presentation.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import su.leff.core.data.Dialog
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.*
 import su.leff.core.interactors.AddDialog
 import su.leff.core.interactors.GetDialogs
 import su.leff.core.interactors.RemoveDialog
 import su.leff.presentation.entity.DialogPresentation
+import su.leff.presentation.util.waitFor
 import javax.inject.Inject
 
 class ChatViewModel @Inject constructor(
@@ -21,21 +21,20 @@ class ChatViewModel @Inject constructor(
     private val dialogs = MutableLiveData<List<DialogPresentation>>()
     val allDialogs: LiveData<List<DialogPresentation>> = dialogs
 
-    fun addDialog(dialog: DialogPresentation) {
-        GlobalScope.launch {
-            addDialog(Dialog(dialog.dialogGUID, dialog.name, dialog.isGroup))
+    fun addDialog(dialog: DialogPresentation) = viewModelScope.launch {
+        waitFor {
+            addDialog(dialog.toDialog())
         }
+        loadDialogs()
+    }
+
+    fun loadDialogs() = viewModelScope.launch {
+        dialogs.postValue(getDialogs().map {
+            DialogPresentation.fromDialog(it)
+        })
     }
 
     init {
-        GlobalScope.launch {
-            dialogs.postValue(getDialogs().map {
-                DialogPresentation(
-                    it.dialogGUID,
-                    it.name,
-                    it.isGroup
-                )
-            })
-        }
+        loadDialogs()
     }
 }

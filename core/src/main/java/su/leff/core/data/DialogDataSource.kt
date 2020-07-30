@@ -1,5 +1,7 @@
 package su.leff.core.data
 
+import su.leff.core.domain.Dialog
+
 interface DialogDataSource {
 
     suspend fun add(dialog: Dialog)
