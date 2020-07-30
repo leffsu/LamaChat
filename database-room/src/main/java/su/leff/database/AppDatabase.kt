@@ -8,15 +8,15 @@ import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import su.leff.database.Constants.DATABASE_NAME
 import su.leff.database.entity.dialog.DialogEntity
-import su.leff.database.entity.dialog.DialogDAO
+import su.leff.database.entity.dialog.DialogEntityDAO
 import su.leff.database.entity.dialogmembership.DialogMembershipEntity
-import su.leff.database.entity.dialogmembership.DialogMembershipDAO
+import su.leff.database.entity.dialogmembership.DialogMembershipEntityDAO
 import su.leff.database.entity.message.MessageEntity
-import su.leff.database.entity.message.MessageDAO
+import su.leff.database.entity.message.MessageEntityDAO
 import su.leff.database.entity.note.NoteEntity
-import su.leff.database.entity.note.NoteDAO
+import su.leff.database.entity.note.NoteEntityDAO
 import su.leff.database.entity.user.UserEntity
-import su.leff.database.entity.user.UserDAO
+import su.leff.database.entity.user.UserEntityDAO
 import java.util.concurrent.Executors
 
 @Database(
@@ -33,15 +33,15 @@ import java.util.concurrent.Executors
 @TypeConverters(CalendarConverter::class)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun noteDAO(): NoteDAO
+    abstract fun noteDAO(): NoteEntityDAO
 
-    abstract fun messageDAO(): MessageDAO
+    abstract fun messageDAO(): MessageEntityDAO
 
-    abstract fun dialogDAO(): DialogDAO
+    abstract fun dialogDAO(): DialogEntityDAO
 
-    abstract fun dialogMembershaipDAO(): DialogMembershipDAO
+    abstract fun dialogMembershaipDAO(): DialogMembershipEntityDAO
 
-    abstract fun userDAO(): UserDAO
+    abstract fun userDAO(): UserEntityDAO
 
     companion object {
 

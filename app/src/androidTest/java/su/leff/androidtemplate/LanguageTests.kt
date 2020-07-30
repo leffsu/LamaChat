@@ -5,8 +5,8 @@ import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
-import su.leff.androidtemplate.util.language.LanguageIniFileReader
-import su.leff.androidtemplate.util.language.LanguageState
+import su.leff.presentation.util.language.LanguageIniFileReader
+import su.leff.presentation.util.language.LanguageState
 
 @RunWith(AndroidJUnit4::class)
 class LanguageTests {

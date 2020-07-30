@@ -2,8 +2,8 @@ package su.leff.androidtemplate
 
 import org.junit.Assert
 import org.junit.Test
-import su.leff.androidtemplate.util.date.DateReceiver
-import su.leff.androidtemplate.util.date.DateType
+import su.leff.presentation.util.date.DateReceiver
+import su.leff.presentation.util.date.DateType
 import java.util.*
 
 class DateUnitTest {

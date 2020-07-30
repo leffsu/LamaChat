@@ -60,6 +60,7 @@ dependencies {
     implementation project(':translator')
     implementation project(':smoothbottombar')
     implementation project(':core')
+    implementation project(':presentation')
     implementation 'com.facebook.fresco:fresco:2.2.0'
     implementation 'com.squareup.retrofit2:retrofit:2.7.1'
     implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
