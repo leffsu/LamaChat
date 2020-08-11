@@ -139,7 +139,7 @@ class AuthFragment : BaseFragment() {
         Handler().postDelayed({
             hideProgress()
             backstack.goTo(HomeKey())
-        }, 5000)
+        }, 500)
     }
 
     /**

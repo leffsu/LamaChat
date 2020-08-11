@@ -1,11 +1,11 @@
-package su.leff.androidtemplate.ui.chat
+package su.leff.presentation.ui.chat
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import su.leff.presentation.R
-import su.leff.presentation.ui.chat.Chat
 import su.leff.presentation.ui.chat.ChatViewHolder
+import su.leff.presentation.ui.home.subview.chatlist.Chat
 
 class ChatAdapter() : RecyclerView.Adapter<ChatViewHolder>() {
 

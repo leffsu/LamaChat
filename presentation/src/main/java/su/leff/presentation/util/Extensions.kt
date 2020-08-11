@@ -1,6 +1,7 @@
 package su.leff.presentation.util
 
 import android.view.View
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineScope
@@ -32,6 +33,10 @@ fun <T : View> T.hideIf(condition: (T) -> Boolean): T {
     }
 
     return this
+}
+
+fun View.toConstraintLayout(): ConstraintLayout {
+    return this as ConstraintLayout
 }
 
 suspend fun <T> ViewModel.waitFor(block: suspend CoroutineScope.() -> T) {

@@ -1,4 +1,4 @@
-package su.leff.presentation.ui.home.news
+package su.leff.presentation.ui.home.subview.news
 
 import kotlinx.android.parcel.Parcelize
 import su.leff.presentation.navigation.BaseKey

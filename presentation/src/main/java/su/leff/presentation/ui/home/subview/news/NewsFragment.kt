@@ -1,4 +1,4 @@
-package su.leff.presentation.ui.home.news
+package su.leff.presentation.ui.home.subview.news
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,7 +13,7 @@ class NewsFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_news, container, false)
+        return inflater.inflate(R.layout.subview_news, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

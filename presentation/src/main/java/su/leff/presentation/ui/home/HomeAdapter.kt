@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import su.leff.presentation.util.onClick
 import su.leff.presentation.R
 
-class HomeAdapter(val goToChat: () -> Unit) : RecyclerView.Adapter<HomeViewHolder>() {
+class HomeAdapter(val goToChat: (m: String) -> Unit) : RecyclerView.Adapter<HomeViewHolder>() {
 
     val list = ArrayList<Dialog>()
 
@@ -14,10 +14,11 @@ class HomeAdapter(val goToChat: () -> Unit) : RecyclerView.Adapter<HomeViewHolde
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
         val v = LayoutInflater.from(parent.context)
             .inflate(R.layout.viewholder_dialog, parent, false)
+        val viewHolder = HomeViewHolder(v)
         v.onClick {
-            goToChat()
+            goToChat(list[viewHolder.adapterPosition].name)
         }
-        return HomeViewHolder(v)
+        return viewHolder
     }
 
     override fun getItemCount(): Int = list.size

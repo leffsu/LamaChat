@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.zhuinden.simplestackextensions.fragmentsktx.backstack
 import kotlinx.android.synthetic.main.chat_info.*
 import su.leff.presentation.navigation.BaseFragment
-import su.leff.androidtemplate.ui.chat.ChatAdapter
+import su.leff.presentation.ui.chat.ChatAdapter
 import su.leff.presentation.R
 
 class ChatInfoFragment: BaseFragment() {
