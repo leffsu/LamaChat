@@ -1,4 +1,4 @@
-package su.leff.presentation.util
+package su.leff.core.util
 
 import android.app.Activity
 import androidx.fragment.app.Fragment

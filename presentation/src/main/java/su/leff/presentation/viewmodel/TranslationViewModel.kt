@@ -4,8 +4,8 @@ import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import su.leff.presentation.util.language.LanguageIniFileReader
-import su.leff.presentation.util.language.LanguageState
+import su.leff.core.util.language.LanguageIniFileReader
+import su.leff.core.util.language.LanguageState
 
 class TranslationViewModel(private val context: Context) : ViewModel() {
 

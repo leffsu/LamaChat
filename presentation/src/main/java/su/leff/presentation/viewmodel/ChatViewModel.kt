@@ -9,7 +9,7 @@ import su.leff.core.interactors.AddDialog
 import su.leff.core.interactors.GetDialogs
 import su.leff.core.interactors.RemoveDialog
 import su.leff.presentation.entity.DialogPresentation
-import su.leff.presentation.util.waitFor
+import su.leff.core.util.waitFor
 import javax.inject.Inject
 
 class ChatViewModel @Inject constructor(

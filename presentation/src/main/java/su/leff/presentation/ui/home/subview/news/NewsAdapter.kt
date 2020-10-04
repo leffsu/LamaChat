@@ -4,9 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import su.leff.presentation.R
-import su.leff.presentation.ui.home.HomeViewHolder
 import su.leff.presentation.ui.home.subview.core.SubViewWithListParent
-import su.leff.presentation.util.onClick
+import su.leff.core.util.onClick
 
 class NewsAdapter(private val parent: SubViewWithListParent<News>) :
     RecyclerView.Adapter<NewsViewHolder>() {

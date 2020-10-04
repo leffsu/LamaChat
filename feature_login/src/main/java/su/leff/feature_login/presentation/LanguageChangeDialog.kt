@@ -1,4 +1,4 @@
-package su.leff.presentation.ui.auth
+package su.leff.feature_login.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,11 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.dialog_auth_language.*
-import kotlinx.android.synthetic.main.element_language.view.*
-import su.leff.presentation.util.language.LanguageState
-import su.leff.presentation.util.onClick
-import su.leff.presentation.R
-import su.leff.translator.Translator.key
+import su.leff.core.util.language.LanguageState
+import su.leff.feature_login.R
 
 
 /**

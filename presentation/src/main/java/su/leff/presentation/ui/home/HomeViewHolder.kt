@@ -4,7 +4,7 @@ import android.net.Uri
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.viewholder_dialog.view.*
-import su.leff.presentation.util.date.DateReceiver
+import su.leff.core.util.date.DateReceiver
 import java.text.SimpleDateFormat
 import java.util.*
 

@@ -1,4 +1,4 @@
-package su.leff.presentation.ui.auth
+package su.leff.feature_login.presentation
 
 import kotlinx.android.parcel.Parcelize
 import su.leff.presentation.navigation.BaseKey

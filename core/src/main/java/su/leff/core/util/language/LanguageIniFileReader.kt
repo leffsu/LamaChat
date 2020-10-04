@@ -1,4 +1,4 @@
-package su.leff.presentation.util.language
+package su.leff.core.util.language
 
 import android.content.Context
 import su.leff.presentation.R

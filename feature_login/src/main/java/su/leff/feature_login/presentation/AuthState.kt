@@ -1,4 +1,4 @@
-package su.leff.presentation.ui.auth
+package su.leff.feature_login.presentation
 
 enum class AuthState {
     SIGN_IN, // Авторизация.

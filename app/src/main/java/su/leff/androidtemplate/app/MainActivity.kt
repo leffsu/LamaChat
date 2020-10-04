@@ -9,9 +9,9 @@ import com.zhuinden.simplestack.navigator.Navigator
 import kotlinx.android.synthetic.main.activity_main.*
 import su.leff.androidtemplate.R
 import su.leff.presentation.navigation.FragmentStateChanger
-import su.leff.presentation.ui.auth.AuthKey
+import su.leff.feature_login.presentation.AuthKey
 import su.leff.presentation.ui.home.HomeKey
-import su.leff.presentation.util.backstack
+import su.leff.core.util.backstack
 
 class MainActivity : AppCompatActivity(), SimpleStateChanger.NavigationHandler {
     private lateinit var fragmentStateChanger: FragmentStateChanger
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(), SimpleStateChanger.NavigationHandler {
 
         val loggedIn = false
 
-        val baseKey = if (loggedIn) HomeKey() else AuthKey()
+        val baseKey = if (loggedIn) HomeKey() else su.leff.feature_login.presentation.AuthKey()
 
         Navigator.configure()
             .setStateChanger(SimpleStateChanger(this))

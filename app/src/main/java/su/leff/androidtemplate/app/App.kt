@@ -6,7 +6,7 @@ import su.leff.androidtemplate.R
 import su.leff.androidtemplate.di.application.AppComponent
 import su.leff.androidtemplate.di.application.AppModule
 import su.leff.androidtemplate.di.application.DaggerAppComponent
-import su.leff.presentation.util.language.LanguageState
+import su.leff.core.util.language.LanguageState
 import su.leff.presentation.viewmodel.TranslationViewModel
 import su.leff.database.AppDatabase
 import su.leff.presentation.di.DependencyLinker

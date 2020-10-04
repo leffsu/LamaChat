@@ -1,4 +1,4 @@
-package su.leff.presentation.util
+package su.leff.core.util
 
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout

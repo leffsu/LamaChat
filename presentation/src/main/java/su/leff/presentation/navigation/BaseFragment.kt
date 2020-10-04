@@ -10,9 +10,9 @@ import su.leff.presentation.R
 import su.leff.presentation.di.fragment.DaggerFragmentComponent
 import su.leff.presentation.di.fragment.FragmentComponent
 import su.leff.presentation.di.fragment.FragmentModule
-import su.leff.presentation.util.hide
-import su.leff.presentation.util.requireArguments
-import su.leff.presentation.util.show
+import su.leff.core.util.hide
+import su.leff.core.util.requireArguments
+import su.leff.core.util.show
 import su.leff.presentation.view.ParentConstraintLayout
 import su.leff.presentation.viewmodel.ChatViewModel
 import su.leff.presentation.viewmodel.TranslationViewModel

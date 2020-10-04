@@ -1,4 +1,4 @@
-package su.leff.presentation.ui.auth
+package su.leff.feature_login.presentation
 
 import android.os.Bundle
 import android.os.Handler
@@ -25,7 +25,6 @@ import su.leff.presentation.util.show
 import su.leff.translator.Translator
 import su.leff.translator.Translator.hintKey
 import su.leff.translator.Translator.key
-import kotlin.random.Random
 
 /**
  * Фрагмент для авторизации.

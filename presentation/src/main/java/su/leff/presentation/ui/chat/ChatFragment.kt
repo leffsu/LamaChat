@@ -11,15 +11,12 @@ import com.zhuinden.simplestackextensions.fragmentsktx.backstack
 import kotlinx.android.synthetic.main.fragment_chat.*
 import su.leff.presentation.navigation.BaseFragment
 import su.leff.presentation.ui.chatinfo.ChatInfoKey
-import su.leff.presentation.util.hide
-import su.leff.presentation.util.onClick
-import su.leff.presentation.util.show
+import su.leff.core.util.hide
+import su.leff.core.util.onClick
+import su.leff.core.util.show
 import su.leff.presentation.R
 import su.leff.presentation.ui.chat.ChatAdapter
-import su.leff.presentation.ui.home.subview.chatlist.Chat
 import su.leff.presentation.viewmodel.ChatViewModel
-import java.util.*
-import kotlin.collections.ArrayList
 
 class ChatFragment : BaseFragment() {
 

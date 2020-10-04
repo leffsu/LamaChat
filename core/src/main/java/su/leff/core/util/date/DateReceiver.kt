@@ -1,4 +1,4 @@
-package su.leff.presentation.util.date
+package su.leff.core.util.date
 
 import java.text.SimpleDateFormat
 import java.util.*

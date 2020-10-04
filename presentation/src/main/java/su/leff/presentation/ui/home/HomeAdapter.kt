@@ -3,7 +3,7 @@ package su.leff.presentation.ui.home
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import su.leff.presentation.util.onClick
+import su.leff.core.util.onClick
 import su.leff.presentation.R
 
 class HomeAdapter(val goToChat: (m: String) -> Unit) : RecyclerView.Adapter<HomeViewHolder>() {
